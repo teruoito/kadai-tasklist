@@ -3,9 +3,15 @@
     <aside class="col-md-4">
       <%= form_for(@task) do |f| %>
         <div class="form-group">
-          <%= f.text_area :content, class: 'form-control', rows: 5 %>
+          <%= f.label :status, 'ステータス' %>
+          <%= f.text_field :status, class: 'form-control' %>
         </div>
-        <%= f.submit 'Post', class: 'btn btn-primary btn-block' %>
+
+        <div class="form-group">
+          <%= f.label :content, 'タスク' %>
+          <%= f.text_field :content, class: 'form-control' %>
+        </div>
+        <%= f.submit '記録', class: 'btn btn-primary btn-block' %>
       <% end %>
     </aside>
     <div class="col-xs-8">
@@ -15,7 +21,7 @@
 <% else %>
   <div class="center jumbotron">
     <div class="text-center">
-      <h1>ようこそ Task List へ</h1>
+      <h1>ようこそTaskListへ</h1>
       <%= link_to 'Sign up now!', signup_path, class: 'btn btn-lg btn-primary' %>
     </div>
   </div>
